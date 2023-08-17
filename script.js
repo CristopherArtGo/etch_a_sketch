@@ -6,19 +6,20 @@ let rainbow = document.getElementById('rainbow');
 let rainbowPaint = false;
 let eraserPaint = false;
 let shadingPaint = false;
+let colorSelector = document.getElementById('colorSelector');
+let color = document.getElementById('color');
+
+colorSelector.addEventListener('click', function () {
+    rainbowPaint = false;
+    eraserPaint = false;
+    shadingPaint = false;
+});
 
 rainbow.addEventListener('click', function () {
     rainbowPaint = true;
     eraserPaint = false;
     shadingPaint = false;
 });
-
-let black = document.getElementById('black');
-black.addEventListener('click', function () {
-    rainbowPaint = false;
-    eraserPaint = false;
-    shadingPaint = false;
-}); 
 
 let eraser = document.getElementById('eraser');
 eraser.addEventListener('click', function () {
@@ -54,7 +55,7 @@ function clicked () {
     }
     else
     {
-    this.style.backgroundColor = "black";
+    this.style.backgroundColor = color.value;
     }
 }
 
@@ -75,7 +76,7 @@ function dragged () {
         }*/
         else
         {
-        this.style.backgroundColor = "black";
+            this.style.backgroundColor = color.value;
         }
     }
 }
